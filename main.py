@@ -1,6 +1,6 @@
 import random
 import sys
-from threading import *
+
 import pygame
 from pygame import mixer
 from pygame.locals import *
@@ -21,7 +21,6 @@ screen = pygame.display.set_mode((width, height), pygame.RESIZABLE)
 background = [pygame.image.load('main.jpg').convert(), pygame.image.load('ironman lead.jpg').convert(),
               pygame.image.load('thanos lead.jpg').convert(), pygame.image.load('game_intro.jpg').convert(),
               pygame.image.load('pause.jpg').convert(), pygame.image.load('help_pg.png').convert()]
-
 
 # player
 # stand
@@ -775,7 +774,8 @@ en_health = 1000
 enemy_hitbox = [0, 0, 0, 0]
 e = 0
 f = 0
-enemy_sound = [mixer.Sound('stone_throw.wav'), mixer.Sound('stone_hit.wav'), mixer.Sound('rock_crashing.wav'), mixer.Sound('fire.wav'), mixer.Sound('land.wav')]
+enemy_sound = [mixer.Sound('stone_throw.wav'), mixer.Sound('stone_hit.wav'), mixer.Sound('rock_crashing.wav'),
+               mixer.Sound('fire.wav'), mixer.Sound('land.wav')]
 ischoice = True
 long_range_list = ['teleport', 'long range hit', 'long range shot', 'long range teleport', 'walk']
 combine_list = ['hit', 'teleport', 'long range hit', 'long range shot', 'long range teleport']
@@ -790,7 +790,9 @@ playerY = height - 120
 pl_health = 1000
 player_hitbox = [0, 0, 0, 0]
 player_power_attack = 'none'
-player_sound = [mixer.Sound('walk.wav'), mixer.Sound('unibeam.wav'), mixer.Sound("missile.wav"), mixer.Sound("launch.wav"), mixer.Sound("missile_hit.wav"), mixer.Sound('domo.wav'), mixer.Sound('iron_kick.wav'), mixer.Sound('ironman_hit.wav')]
+player_sound = [mixer.Sound('walk.wav'), mixer.Sound('unibeam.wav'), mixer.Sound("missile.wav"),
+                mixer.Sound("launch.wav"), mixer.Sound("missile_hit.wav"), mixer.Sound('domo.wav'),
+                mixer.Sound('iron_kick.wav'), mixer.Sound('ironman_hit.wav')]
 wimg = 0
 wimgchg = 0
 down_ = 0
@@ -1058,7 +1060,7 @@ def gamehelp():
         clock.tick(15)
         screen.fill((0, 0, 0))
         screen.blit(pygame.transform.scale(background[5], (width, height)), (0, 0))
-        type('welcome to Iron Man', width / 2, height * .1, 255, 255, 0, 42, True)
+        type('Welcome to Iron Man', width / 2, height * .1, 255, 255, 0, 42, True)
         type('e key = shot missile', width * .2, height * .25, 0, 225, 225, 25, False)
         type('w key = blast beam', width * .2, height * .3, 0, 225, 225, 25, False)
         type('s key = shield', width * .2, height * .35, 0, 225, 225, 25, False)
@@ -1169,7 +1171,7 @@ def attack(j):
 def en_bulletbox(a, b, c, d, e):
     global en_bull_arrary
     en_bull_arrary[e] = [a, b, c, d]
-    #pygame.draw.rect(screen, (255, 255, 255), (a, b, c, d), 2)
+    # pygame.draw.rect(screen, (255, 255, 255), (a, b, c, d), 2)
 
 
 def tele(a):
